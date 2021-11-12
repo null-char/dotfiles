@@ -1,3 +1,5 @@
+local u = require("utils")
+
 local theme = "tokyonight"
 
 local M = {

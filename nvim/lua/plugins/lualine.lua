@@ -41,15 +41,5 @@ require("lualine").setup({
         lualine_y = { "progress" },
         lualine_z = { "location" },
     },
-    -- tabline = {
-        -- section_separators = { left = "", right = "" },
-        -- lualine_a = {
-        --     {
-        --         "tabs",
-        --         max_length = vim.o.columns, -- expand to viewport size
-        --         mode = 2, -- tab number + name
-        --     },
-        -- },
-    -- },
     extensions = { "fugitive" },
 })

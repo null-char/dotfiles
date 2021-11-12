@@ -7,14 +7,6 @@ cmp.setup({
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
         end,
-        get_trigger_characters = function(trigger_characters)
-            return vim.tbl_filter(function(char)
-                return char ~= " " and char ~= "\t"
-            end, trigger_characters)
-        end,
-    },
-    completion = {
-        completeopt = "menu,menuone,noinsert",
     },
     mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -36,7 +28,7 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "buffer" },
-        { name = "vsnip", priority = 9999 },
+        { name = "vsnip" },
         { name = "path" },
     },
 })

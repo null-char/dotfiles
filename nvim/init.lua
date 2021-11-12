@@ -72,7 +72,7 @@ u.map("n", "<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", { expr = true })
 -- buffer management
 u.nmap("<Leader>c", ":Bdelete<CR>")
 u.nmap("<Leader>bn", ":TablineBufferNext<CR>")
-u.nmap("<Leader>bp", ":TablineBufferNext<CR>")
+u.nmap("<Leader>bp", ":TablineBufferPrevious<CR>")
 
 -- tabs
 u.nmap("<LocalLeader>tt", ":tabnew<CR>")
@@ -116,3 +116,6 @@ require("commands")
 require("plugins")
 require("lsp")
 pcall(require, "theme")
+
+-- highlight overrides
+vim.cmd([[hi Comment gui=bold]])
