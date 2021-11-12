@@ -7,6 +7,7 @@ local u = require("utils")
 vim.g.mapleader = ","
 vim.g.maplocalleader = ";"
 
+vim.cmd("set shell=/bin/bash")
 vim.opt.showcmd = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -45,7 +46,7 @@ u.nmap("<BS>", "<C-^>")
 u.nmap("<Esc>", ":nohl<CR>")
 
 -- copilot
-u.imap("<C-x>", "copilot#Accept()", { silent = true, script = true, expr = true })
+u.imap("<C-g>", "copilot#Accept('<CR>')", { silent = true, script = true, expr = true })
 vim.g.copilot_no_tab_map = true
 
 u.nmap("<Tab>", "%", { noremap = false })
@@ -70,6 +71,8 @@ u.map("n", "<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", { expr = true })
 
 -- buffer management
 u.nmap("<Leader>c", ":Bdelete<CR>")
+u.nmap("<Leader>bn", ":TablineBufferNext<CR>")
+u.nmap("<Leader>bp", ":TablineBufferNext<CR>")
 
 -- tabs
 u.nmap("<LocalLeader>tt", ":tabnew<CR>")
