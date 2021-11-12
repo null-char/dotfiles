@@ -1,8 +1,11 @@
+local theme = "tokyonight"
+
 local M = {
-  colorscheme = "tokyonight",
-  lualine = "tokyonight",
+  colorscheme = theme,
+  lualine = theme,
 }
-vim.g.tokyonight_style = "night"
-vim.cmd("colorscheme" .. " " .. M.colorscheme)
+
+-- Theme configuration
+require("plugins.themes." .. theme)
 
 return M
