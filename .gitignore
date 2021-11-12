@@ -1,0 +1,20 @@
+
+Sonarr
+.mono/keypairs
+alacritty
+coc
+configstore
+deluge
+fontforge
+gatsby
+github-copilot
+gtk-2.0
+lvim
+lvim.bak
+qBittorrent
+ranger
+trackma
+yarn/global
+.DS_Store
+HKInstallerSettings.json
+_ignore_patterns = {
