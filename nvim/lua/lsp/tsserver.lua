@@ -37,9 +37,6 @@ M.setup = function(on_attach, capabilities)
             u.buf_map("n", "go", ":TSLspImportAll<CR>", nil, bufnr)
             u.buf_map("n", "qq", ":TSLspFixCurrent<CR>", nil, bufnr)
         end,
-        flags = {
-            debounce_text_changes = 150,
-        },
         capabilities = capabilities,
     })
 end

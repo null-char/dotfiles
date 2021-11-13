@@ -95,15 +95,16 @@ _G.packer_plugins = {
     path = "/Users/null-char/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-tabnine"] = {
+    config = { "require('plugins.tabnine')" },
+    loaded = true,
+    path = "/Users/null-char/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   ["cmp-vsnip"] = {
     loaded = true,
     path = "/Users/null-char/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/Users/null-char/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
   },
   ["dashboard-nvim"] = {
     config = { "require('plugins.dashboard')" },
@@ -138,6 +139,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/null-char/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/Users/null-char/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     config = { "require('plugins.lualine')" },
@@ -403,6 +409,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: vim-vsnip
+time([[Config for vim-vsnip]], true)
+require('plugins.vsnip')
+time([[Config for vim-vsnip]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require('plugins.lualine')
@@ -411,62 +421,62 @@ time([[Config for lualine.nvim]], false)
 time([[Config for vim-illuminate]], true)
 require('plugins.illuminate')
 time([[Config for vim-illuminate]], false)
--- Config for: vim-subversive
-time([[Config for vim-subversive]], true)
-require('plugins.subversive')
-time([[Config for vim-subversive]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: vim-matchup
 time([[Config for vim-matchup]], true)
 require('plugins.matchup')
 time([[Config for vim-matchup]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require('plugins.comment')
-time([[Config for Comment.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('plugins.cmp')
 time([[Config for nvim-cmp]], false)
--- Config for: filetype.nvim
-time([[Config for filetype.nvim]], true)
-require('plugins.filetype')
-time([[Config for filetype.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('plugins.git')
-time([[Config for gitsigns.nvim]], false)
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-require('plugins.dashboard')
-time([[Config for dashboard-nvim]], false)
--- Config for: lazygit.nvim
-time([[Config for lazygit.nvim]], true)
-require('plugins.lazygit')
-time([[Config for lazygit.nvim]], false)
--- Config for: vim-vsnip
-time([[Config for vim-vsnip]], true)
-require('plugins.vsnip')
-time([[Config for vim-vsnip]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('plugins.autopairs')
-time([[Config for nvim-autopairs]], false)
+-- Config for: cmp-tabnine
+time([[Config for cmp-tabnine]], true)
+require('plugins.tabnine')
+time([[Config for cmp-tabnine]], false)
+-- Config for: vim-subversive
+time([[Config for vim-subversive]], true)
+require('plugins.subversive')
+time([[Config for vim-subversive]], false)
 -- Config for: tabline.nvim
 time([[Config for tabline.nvim]], true)
 require('plugins.tabline')
 time([[Config for tabline.nvim]], false)
+-- Config for: dashboard-nvim
+time([[Config for dashboard-nvim]], true)
+require('plugins.dashboard')
+time([[Config for dashboard-nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: filetype.nvim
+time([[Config for filetype.nvim]], true)
+require('plugins.filetype')
+time([[Config for filetype.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('plugins.git')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: lazygit.nvim
+time([[Config for lazygit.nvim]], true)
+require('plugins.lazygit')
+time([[Config for lazygit.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins.telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins.autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require('plugins.comment')
+time([[Config for Comment.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -477,10 +487,10 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'nvim-ts-autotag', 'nvim-ts-context-commentstring', 'nvim-treesitter-textsubjects'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescript ++once lua require("packer.load")({'nvim-treesitter-textsubjects', 'nvim-ts-context-commentstring', 'nvim-ts-autotag'}, { ft = "typescript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'nvim-treesitter-textsubjects', 'nvim-ts-context-commentstring', 'nvim-ts-autotag'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
 vim.cmd [[au FileType json ++once lua require("packer.load")({'package-info.nvim'}, { ft = "json" }, _G.packer_plugins)]]
 vim.cmd [[au FileType lua ++once lua require("packer.load")({'nvim-treesitter-textsubjects'}, { ft = "lua" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescript ++once lua require("packer.load")({'nvim-ts-autotag', 'nvim-ts-context-commentstring', 'nvim-treesitter-textsubjects'}, { ft = "typescript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

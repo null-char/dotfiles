@@ -12,6 +12,8 @@ local sources = {
     }),
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
     b.formatting.shfmt,
+    b.formatting.rustfmt,
+    b.formatting.black,
     b.diagnostics.write_good,
     b.diagnostics.markdownlint,
     b.diagnostics.teal,

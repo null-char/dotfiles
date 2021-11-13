@@ -10,7 +10,10 @@ require("nvim-treesitter.configs").setup({
         "yaml",
         "toml",
         "rust",
-        "go"
+        "go",
+        "fish",
+        "css",
+        "scss"
     },
     -- plugins
     autopairs = { enable = true },

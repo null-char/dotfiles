@@ -36,7 +36,7 @@ return require("packer").startup(function()
     }
 
     -- copilot
-    use("github/copilot.vim")
+    -- use("github/copilot.vim")
 
     -- diagnostics
     use {
@@ -76,6 +76,7 @@ return require("packer").startup(function()
         },
         config = config("cmp"),
     })
+    use({"tzachar/cmp-tabnine", run="./install.sh", requires = "hrsh7th/nvim-cmp", config = config("tabnine")})
     use({
         "windwp/nvim-autopairs", -- autocomplete pairs
         config = config("autopairs"),
@@ -99,6 +100,7 @@ return require("packer").startup(function()
     use_with_config("RRethy/vim-illuminate", "illuminate") -- highlights and allows moving between variable references
     use("jose-elias-alvarez/null-ls.nvim") -- allows using neovim as language server
     use("b0o/schemastore.nvim") -- simple access to json schemae
+    use("onsails/lspkind-nvim") -- better formatting for nvim-cmp
 
     -- development
     use("jose-elias-alvarez/nvim-lsp-ts-utils") -- improve typescript experience

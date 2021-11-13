@@ -25,6 +25,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.timeoutlen = 500
+vim.opt.linebreak = true
 vim.opt.shortmess:append("cA")
 vim.opt.clipboard:append("unnamedplus")
 
@@ -46,8 +47,8 @@ u.nmap("<BS>", "<C-^>")
 u.nmap("<Esc>", ":nohl<CR>")
 
 -- copilot
-u.imap("<C-g>", "copilot#Accept('<CR>')", { silent = true, script = true, expr = true })
-vim.g.copilot_no_tab_map = true
+-- u.imap("<C-f>", "copilot#Accept('<CR>')", { silent = true, script = true, expr = true })
+-- vim.g.copilot_no_tab_map = true
 
 u.nmap("<Tab>", "%", { noremap = false })
 u.xmap("<Tab>", "%", { noremap = false })
@@ -117,5 +118,3 @@ require("plugins")
 require("lsp")
 pcall(require, "theme")
 
--- highlight overrides
-vim.cmd([[hi Comment gui=bold]])
