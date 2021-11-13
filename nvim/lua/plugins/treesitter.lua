@@ -11,9 +11,10 @@ require("nvim-treesitter.configs").setup({
         "toml",
         "rust",
         "go",
+        "python",
         "fish",
         "css",
-        "scss"
+        "scss",
     },
     -- plugins
     autopairs = { enable = true },
@@ -32,3 +33,5 @@ require("nvim-treesitter.configs").setup({
         enable = true,
     },
 })
+
+require("nvim-treesitter.install").compilers = { "gcc" }

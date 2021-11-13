@@ -6,7 +6,7 @@ coc
 configstore
 deluge
 fontforge
-mpv
+mpv/shaders
 gatsby
 github-copilot
 gtk-2.0

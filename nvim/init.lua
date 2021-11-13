@@ -26,6 +26,12 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.timeoutlen = 500
 vim.opt.linebreak = true
+-- how tabs should work
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = -1
+vim.opt.shiftwidth = 0
+vim.opt.shiftround = true
 vim.opt.shortmess:append("cA")
 vim.opt.clipboard:append("unnamedplus")
 
