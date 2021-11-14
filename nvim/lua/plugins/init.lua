@@ -19,7 +19,7 @@ return require("packer").startup(function()
     use({
         { "lewis6991/gitsigns.nvim", config = config("git") }, -- git plugins
         { "tpope/vim-fugitive", requires = "tpope/vim-rhubarb" },
-        { "kdheepak/lazygit.nvim", config = config("lazygit") }
+        { "kdheepak/lazygit.nvim", config = config("lazygit") },
     })
     use({
         "liuchengxu/vim-which-key",
@@ -29,20 +29,22 @@ return require("packer").startup(function()
     use_with_config("glepnir/dashboard-nvim", "dashboard")
 
     -- filetree
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require'nvim-tree'.setup {} end
-    }
+    use({
+        "kyazdani42/nvim-tree.lua",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("nvim-tree").setup({})
+        end,
+    })
 
     -- copilot
     -- use("github/copilot.vim")
 
     -- diagnostics
-    use {
+    use({
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
-    }
+    })
 
     -- text objects
     use("wellle/targets.vim") -- many useful additional text objects
@@ -64,19 +66,21 @@ return require("packer").startup(function()
 
     -- additional functionality
     use("ggandor/lightspeed.nvim") -- motion
-    use_with_config("hrsh7th/vim-vsnip", "vsnip") -- snippets
+    use_with_config("L3MON4D3/LuaSnip", "luasnip") -- snippets
+    use("saadparwaiz1/cmp_luasnip")
+    use("rafamadriz/friendly-snippets")
     use({
         "hrsh7th/nvim-cmp", -- completion
         requires = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-vsnip",
+            "L3MON4D3/LuaSnip",
             "hrsh7th/cmp-path",
         },
         config = config("cmp"),
     })
-    use({"tzachar/cmp-tabnine", run="./install.sh", requires = "hrsh7th/nvim-cmp", config = config("tabnine")})
+    use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp", config = config("tabnine") })
     use({
         "windwp/nvim-autopairs", -- autocomplete pairs
         config = config("autopairs"),
@@ -134,11 +138,11 @@ return require("packer").startup(function()
         "sainnhe/edge",
     })
     use_with_config("nvim-lualine/lualine.nvim", "lualine") -- statusline and tabline
-    use {
-        'kdheepak/tabline.nvim',
+    use({
+        "kdheepak/tabline.nvim",
         config = config("tabline"),
-        requires = { { 'nvim-lualine/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
-    }
+        requires = { { "nvim-lualine/lualine.nvim", opt = true }, { "kyazdani42/nvim-web-devicons", opt = true } },
+    })
     use("moll/vim-bbye") -- proper close buffer command
 
     -- misc

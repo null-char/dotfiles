@@ -13,6 +13,8 @@ local sources = {
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
     b.formatting.shfmt,
     b.formatting.rustfmt,
+    b.formatting.gofmt,
+    b.formatting.goimports, -- updates Go import lines, adding missing ones and removing unreferenced ones
     b.formatting.black,
     b.diagnostics.write_good,
     b.diagnostics.markdownlint,

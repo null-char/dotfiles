@@ -4,7 +4,7 @@ function fish_greeting
 end
 funcsave fish_greeting
 
-set PATH /usr/local/lib/node_modules $PATH
+fish_add_path /usr/local/lib/node_modules/ $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin
 
 # bindings
 # Clears the terminal and redraws the prompt
