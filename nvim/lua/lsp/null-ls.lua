@@ -2,8 +2,27 @@ local null_ls = require("null-ls")
 local b = null_ls.builtins
 
 local sources = {
-    b.formatting.prettier.with({
-        filetypes = { "html", "css", "scss", "json", "yaml", "markdown", "toml" },
+    b.diagnostics.eslint_d.with({
+        prefer_local = "node_modules/.bin",
+    }),
+    b.code_actions.eslint_d.with({
+        prefer_local = "node_modules/.bin",
+    }),
+    b.formatting.prettierd.with({
+        filetypes = {
+            "html",
+            "css",
+            "scss",
+            "json",
+            "yaml",
+            "markdown",
+            "toml",
+            "typescript",
+            "typescriptreact",
+            "javascript",
+            "javascriptreact",
+        },
+        prefer_local = "node_modules/.bin",
     }),
     b.formatting.stylua.with({
         condition = function(utils)
@@ -26,11 +45,7 @@ local sources = {
 
 local M = {}
 M.setup = function(on_attach)
-    null_ls.config({
-        -- debug = true,
-        sources = sources,
-    })
-    require("lspconfig")["null-ls"].setup({ on_attach = on_attach })
+    null_ls.setup({ on_attach = on_attach, sources = sources, })
 end
 
 return M

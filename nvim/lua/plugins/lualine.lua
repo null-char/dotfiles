@@ -33,7 +33,7 @@ require("lualine").setup({
             { "filename", file_status = false },
             {
                 "diagnostics",
-                sources = { "nvim_lsp" },
+                sources = { "nvim_diagnostic" },
                 icons_enabled = true,
             },
         },

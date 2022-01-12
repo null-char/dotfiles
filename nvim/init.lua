@@ -1,6 +1,5 @@
-if vim.g.vscode then
-  return
-end
+-- impatient needs to be setup before any other lua plugin
+require("impatient")
 
 local u = require("utils")
 
@@ -53,8 +52,8 @@ u.nmap("<BS>", "<C-^>")
 u.nmap("<Esc>", ":nohl<CR>")
 
 -- copilot
--- u.imap("<C-f>", "copilot#Accept('<CR>')", { silent = true, script = true, expr = true })
--- vim.g.copilot_no_tab_map = true
+u.imap("<C-f>", "copilot#Accept('<CR>')", { silent = true, script = true, expr = true })
+vim.g.copilot_no_tab_map = true
 
 u.nmap("<Tab>", "%", { noremap = false })
 u.xmap("<Tab>", "%", { noremap = false })
@@ -77,7 +76,10 @@ u.xmap("<Space>", ":", { silent = false })
 u.map("n", "<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", { expr = true })
 
 -- buffer management
-u.nmap("<Leader>c", ":Bdelete<CR>")
+u.nmap("<Leader>c", ":BDelete this<CR>")
+u.nmap("<Leader>ca", ":BDelete all<CR>")
+u.nmap("<Leader>co", ":BDelete other<CR>")
+u.nmap("<Leader>ch", ":BWipeout hidden<CR>")
 u.nmap("<Leader>bn", ":TablineBufferNext<CR>")
 u.nmap("<Leader>bp", ":TablineBufferPrevious<CR>")
 
@@ -123,4 +125,3 @@ require("commands")
 require("plugins")
 require("lsp")
 pcall(require, "theme")
-

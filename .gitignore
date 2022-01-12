@@ -17,5 +17,4 @@ ranger
 trackma
 yarn/global
 .DS_Store
-HKInstallerSettings.json
-_ignore_patterns = {
+*.log

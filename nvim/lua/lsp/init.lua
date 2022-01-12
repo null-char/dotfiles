@@ -63,3 +63,4 @@ require("lsp.cssls").setup(on_attach, capabilities)
 require("lsp.pyright").setup(on_attach, capabilities)
 require("lsp.hls").setup(on_attach, capabilities)
 require("lsp.gopls").setup(on_attach, capabilities)
+

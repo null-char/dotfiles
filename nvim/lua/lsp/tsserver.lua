@@ -5,11 +5,11 @@ local u = require("utils")
 local ts_utils_settings = {
     -- debug = true,
     import_all_scan_buffers = 100,
-    eslint_bin = "eslint_d",
-    eslint_enable_diagnostics = true,
-    eslint_opts = {},
-    enable_formatting = true,
-    formatter = "prettierd",
+    -- eslint_bin = "eslint_d",
+    -- eslint_enable_diagnostics = true,
+    -- eslint_opts = {},
+    -- enable_formatting = true,
+    -- formatter = "prettierd",
     update_imports_on_move = true,
     -- filter out dumb module warning
     filter_out_diagnostics_by_code = { 80001 },
