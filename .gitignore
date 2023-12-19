@@ -6,5 +6,5 @@
 !.gitignore
 !README.md
 !install*
-!nvim/
-!kitty/
+!nvim
+!kitty
