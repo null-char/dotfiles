@@ -1,10 +1,11 @@
-# Ignore everything
-*/
 .DS_Store
+
+# Ignore everything
+/*
 
 # Except...
 !.gitignore
 !README.md
 !install*
-!nvim
-!kitty
+!nvim/
+!kitty/
