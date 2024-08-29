@@ -17,7 +17,7 @@ require("lazy").setup({
   "windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
   "numToStr/Comment.nvim",
   "JoosepAlviste/nvim-ts-context-commentstring",
-  "nvim-tree/nvim-web-devicons",
+  "echasnovski/mini.icons",
   "echasnovski/mini.files",
   "moll/vim-bbye",
   "nvim-lualine/lualine.nvim",
@@ -186,5 +186,49 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
       vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
     end
+  },
+
+  -- avante.nvim (AI-Powered Code Assistance, an alternative to Cursor)
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    opts = {
+      -- add any opts here
+    },
+    keys = {
+      { "<leader>aa", function() require("avante.api").ask() end,     desc = "avante: ask",    mode = { "n", "v" } },
+      { "<leader>ar", function() require("avante.api").refresh() end, desc = "avante: refresh" },
+      { "<leader>ae", function() require("avante.api").edit() end,    desc = "avante: edit",   mode = "v" },
+    },
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "echasnovski/mini.icons",
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          -- recommended settings
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+          },
+        },
+      },
+      {
+        -- Make sure to setup it properly if you have lazy=true
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
   }
 })
