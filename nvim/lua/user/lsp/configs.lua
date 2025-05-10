@@ -1,5 +1,5 @@
-local lspconfig = require("lspconfig")
-local mlc = require("mason-lspconfig")
+local blink_cmp = require("blink.cmp")
+local navic = require("nvim-navic")
 
 local servers = {
   "lua_ls",
@@ -33,6 +33,29 @@ local servers = {
 --[[   lspconfig[server].setup(opts) ]]
 --[[ end ]]
 
+local opts = {
+  capabilities = blink_cmp.get_lsp_capabilities({
+    textDocument = {
+      completion = { completionItem = { snippetSupport = true } },
+      foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true
+      },
+
+    }
+  }),
+  on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+      navic.attach(client, bufnr)
+    end
+  end
+}
+
 for _, server in pairs(servers) do
+  local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
+  if has_custom_opts then
+    vim.lsp.config(server, vim.tbl_deep_extend("force", opts, server_custom_opts))
+  end
+
   vim.lsp.enable(server)
 end
