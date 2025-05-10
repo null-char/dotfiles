@@ -18,13 +18,19 @@ require("lazy").setup({
   "numToStr/Comment.nvim",
   "JoosepAlviste/nvim-ts-context-commentstring",
   "echasnovski/mini.icons",
-  "echasnovski/mini.files",
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  },
   "moll/vim-bbye",
   "nvim-lualine/lualine.nvim",
   "feline-nvim/feline.nvim",
   "akinsho/toggleterm.nvim",
   "ahmedkhalf/project.nvim",
-  "github/copilot.vim",
   "Robitx/gp.nvim",
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -67,11 +73,12 @@ require("lazy").setup({
   },
 
   -- colorschemes
-  { "rebelot/kanagawa.nvim",  name = "kanagawa" },
-  { "catppuccin/nvim",        name = "catppuccin" },
-  { "EdenEast/nightfox.nvim", name = "nightfox" },
-  { "sainnhe/sonokai",        name = "sonokai" },
-  { "folke/tokyonight.nvim",  name = "tokyonight" },
+  { "rebelot/kanagawa.nvim",    name = "kanagawa" },
+  { "catppuccin/nvim",          name = "catppuccin" },
+  { "EdenEast/nightfox.nvim",   name = "nightfox" },
+  { "sainnhe/sonokai",          name = "sonokai" },
+  { "folke/tokyonight.nvim",    name = "tokyonight" },
+  { "sainnhe/gruvbox-material", name = "gruvbox-material" },
 
   -- cmp plugins
   "hrsh7th/nvim-cmp",
@@ -105,8 +112,12 @@ require("lazy").setup({
       require("barbecue").setup()
     end,
   },
-  -- formatters/linters (plugin is maintenance only, find alternative)
-  "jose-elias-alvarez/null-ls.nvim",
+  {
+    "nvimtools/none-ls.nvim", -- formatters/linters
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
+  },
   "mfussenegger/nvim-jdtls",
   "folke/neodev.nvim",
   { "antosha417/nvim-lsp-file-operations", dependencies = { { "nvim-lua/plenary.nvim" } } },
@@ -230,5 +241,10 @@ require("lazy").setup({
         ft = { "markdown", "Avante" },
       },
     },
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
   }
 })

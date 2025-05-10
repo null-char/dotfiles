@@ -96,12 +96,7 @@ local mappings = {
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   e = {
     name = "Explorer",
-    o = { "<cmd>lua MiniFiles.open()<cr>", "Open" },
-    O = { "<cmd>lua MiniFiles.open(nil, false)<cr>", "Open (fresh state)" },
-    f = { "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>", "Find File" },
-    F = { "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<cr>", "Find File (fresh state)" },
-    l = { "<cmd>lua MiniFiles.open(MiniFiles.get_latest_path())<cr>", "Open Latest" },
-    s = { "<cmd>lua MiniFiles.synchronize()<cr>", "Synchronize" }
+    o = { "<cmd>Oil<cr>", "Open" },
   },
   p = {
     name = "Packer",

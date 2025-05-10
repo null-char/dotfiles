@@ -42,8 +42,8 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("i", "jk", "<ESC>", opts)
 
 -- Copilot --
-keymap("i", "<C-J>", "copilot#Accept(\"<CR>\")", { expr = true, noremap = true, silent = true })
-vim.g.copilot_no_tab_map = true
+--[[ keymap("i", "<C-J>", "copilot#Accept(\"<CR>\")", { expr = true, noremap = true, silent = true }) ]]
+--[[ vim.g.copilot_no_tab_map = true ]]
 
 -- Visual --
 -- Stay in indent mode
@@ -73,3 +73,10 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- nnoremap <leader>dd :lua require("duck").hatch("ඞ")<CR>
 keymap("n", "<leader>dh", ":lua require('duck').hatch()<CR>", opts)
+
+-- LSP
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)

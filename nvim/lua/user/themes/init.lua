@@ -1,4 +1,4 @@
-local theme = "kanagawa"
+local theme = "gruvbox"
 
 local status_ok, _ = pcall(require, "user.themes." .. theme)
 if not status_ok then

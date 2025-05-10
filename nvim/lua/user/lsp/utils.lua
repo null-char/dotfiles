@@ -2,7 +2,8 @@ local M = {}
 
 local formatting_disabled = {
   "sumneko_lua",
-  "tsserver"
+  "ts_ls",
+  "eslint",
 }
 
 M.lsp_format = function()

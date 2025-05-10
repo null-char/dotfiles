@@ -3,17 +3,28 @@ if not null_ls_status_ok then
   return
 end
 
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
--- local diagnostics = null_ls.builtins.diagnostics
 
+local bin_dir = "/Users/sooryakiranponnath/.local/share/nvim/mason/bin"
 null_ls.setup({
   debug = false,
   root_dir = require("null-ls.utils").root_pattern(".git", "package.json"),
   sources = {
-    formatting.prettier,
-    formatting.black.with({ extra_args = { "--fast" } }),
-    formatting.stylua,
-  },
+    formatting.prettierd.with({
+      command = bin_dir .. "/prettierd",
+    }),
+    formatting.black.with({
+      command = bin_dir .. "/black",
+      extra_args = { "--fast" }
+    }),
+    formatting.verible_verilog_format.with({
+      command = bin_dir .. "/verible-verilog-format"
+    }),
+    require("none-ls.diagnostics.eslint_d").with({
+      command = bin_dir .. "/eslint_d",
+    }),
+    require("none-ls.code_actions.eslint_d").with({
+      command = bin_dir .. "/eslint_d",
+    })
+  }
 })

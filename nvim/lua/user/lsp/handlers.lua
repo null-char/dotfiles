@@ -18,6 +18,11 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = false,
+    -- show diagnostics as virtual lines
+    --[[ virtual_lines = { ]]
+    --[[   current_line = true ]]
+    --[[ }, ]]
+
     -- show signs
     signs = {
       active = signs,

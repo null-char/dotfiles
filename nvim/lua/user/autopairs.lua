@@ -6,6 +6,7 @@ end
 
 npairs.setup {
   check_ts = true,
+  map_cr = false,
   ts_config = {
     lua = { "string", "source" },
     javascript = { "string", "template_string" },
