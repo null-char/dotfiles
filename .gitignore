@@ -1,0 +1,16 @@
+.DS_Store
+
+# Ignore everything
+/*
+
+# Except...
+!.gitignore
+!README.md
+!tmux.conf
+!install*
+!nvim/
+!kitty/
+!ghostty/
+!tmux/
+
+nvim/pack

@@ -1,0 +1,7 @@
+theme = Gruvbox Dark Hard
+mouse-hide-while-typing = true
+
+font-family = Iosevka Term
+font-size = 12
+font-thicken = true
+font-thicken-strength = 0
